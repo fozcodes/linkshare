@@ -1,0 +1,26 @@
+{
+    "name": "nmrkt/linkshare",
+    "description": "A guzzle client for consuming the Commission Junction API",
+    "require": {
+        "guzzlehttp/guzzle": "~5.0",
+        "guzzlehttp/guzzle-services": "0.4.*"
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ian Fosbery",
+            "email": "ian@nmrkt.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "Nmrkt\\Linkshare": "src/",
+            "Nmrkt\\Tests": "tests/"
+        }
+    }
+}

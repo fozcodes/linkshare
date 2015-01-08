@@ -8,29 +8,26 @@
 
 namespace Nmrkt\Tests;
 
-use Nmrkt\CommissionJunction\Client;
+use Nmrkt\Linkshare\Client;
 use GuzzleHttp\Subscriber\Mock;
 use GuzzleHttp\Message\Response;
 use GuzzleHttp\Subscriber\History;
 
 abstract class ClientTestCase extends \PHPUnit_Framework_TestCase
 {
-    protected $cj_client;
+    protected $linkshare_client;
 
     protected $mock_response_object;
 
     protected $request_history_object;
 
-    protected $auth_token = 'fake_de_token_for_de_testing';
-
-    protected $subdomain = 'subdomain';
+    protected $api_uri = 'endpoint';
 
     public function setup()
     {
-        $this->cj_client = new Client($this->auth_token, $this->subdomain);
+        $this->linkshare_client = new Client($this->api_uri);
         //setup history subscriber
-        $this->cj_client->getEmitter()->attach($this->getHistoryObject());
-
+        $this->linkshare_client->getEmitter()->attach($this->getHistoryObject());
     }
 
     /**

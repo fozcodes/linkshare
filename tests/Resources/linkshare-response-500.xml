@@ -1,0 +1,5 @@
+<ams:fault xmlns:ams="http://wso2.org/apimanager/security">
+    <ams:code>900900</ams:code>
+    <ams:message>Unclassified Authentication Failure</ams:message>
+    <ams:description>Error while accessing backend services for API key validation</ams:description>
+</ams:fault>

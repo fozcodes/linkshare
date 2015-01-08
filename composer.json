@@ -3,12 +3,28 @@
     "description": "A guzzle client for consuming the Commission Junction API",
     "require": {
         "guzzlehttp/guzzle": "~5.0",
-        "guzzlehttp/guzzle-services": "0.4.*"
+        "guzzlehttp/guzzle-services": "0.4.*",
+        "fosberyi/guzzle5-oauth2-subscriber": "master"
 
     },
     "require-dev": {
         "phpunit/phpunit": "~3.7"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "nmrkt/guzzle5-oauth2-subscriber",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/fosberyi/guzzle5-oauth2-subscriber",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+
+        }
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -20,7 +36,8 @@
     "autoload": {
         "psr-0": {
             "Nmrkt\\Linkshare": "src/",
-            "Nmrkt\\Tests": "tests/"
+            "Nmrkt\\Tests": "tests/",
+            "Nmrkt\\GuzzleOAuth2": "vendor/fosberyi/guzzle5-oauth2-subscriber/src/"
         }
     }
 }

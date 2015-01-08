@@ -6,9 +6,9 @@
  * Time: 1:33 PM
  */
 
-namespace Nmrkt\Tests\CommissionJunction;
+namespace Nmrkt\Tests\Linkshare;
 
-use Nmrkt\CommissionJunction\Client as Client;
+use Nmrkt\Linkshare\Client as Client;
 use Nmrkt\Tests\ClientTestCase;
 use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\ClientException;
@@ -24,50 +24,36 @@ class ClientTest extends ClientTestCase
 
     public function testClientIsGuzzleClient()
     {
-        $this->assertTrue(is_a($this->cj_client, 'GuzzleHttp\Client'));
+        $this->assertTrue(is_a($this->linkshare_client, 'GuzzleHttp\Client'));
     }
 
     public function testBaseUrlIsSetCorrectly()
     {
-        $this->cj_client = new Client($this->auth_token, 'somesubdomain');
+        $this->linkshare_client = new Client('endpoint');
 
-        $baseUrl = $this->cj_client->getBaseUrl();
+        $baseUrl = $this->linkshare_client->getBaseUrl();
 
-        $this->assertEquals('https://somesubdomain.api.cj.com/v3/', $baseUrl);
+        $this->assertEquals('https://api.rakutenmarketing.com/endpoint/1.0/', $baseUrl);
     }
 
-    public function testExceptionIsThrownOnErrorResponse()
+    public function testOauthPluginCanBeAddedAsSubscriber()
     {
+        $this->linkshare_client = new Client('endpoint');
 
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')), 500);
+        $this->linkshare_client->getOauth2Client();
+        $this->linkshare_client->getClientCredentialsGrantType();
+        $subscriber = $this->linkshare_client->getOauth2Subscriber();
 
-        $this->cj_client->getEmitter()->attach($this->getMockObject());
+        $this->linkshare_client->attachOauth2Subscriber($subscriber);
 
-        try {
-            $this->cj_client->get('/');
-        } catch ( ServerException $expected ) {
-            return;
-        }
+        $before_subscibers = $this->linkshare_client->getEmitter()->listeners('before');
 
-        $this->fail('An expected exception has not been raised.');
+        $this->assertTrue(is_a($before_subscibers[0][0], 'Nmrkt\GuzzleOAuth2\OAuth2Subscriber'));
+
+        $error_subscibers = $this->linkshare_client->getEmitter()->listeners('error');
+
+        $this->assertTrue(is_a($error_subscibers[0][0], 'Nmrkt\GuzzleOAuth2\OAuth2Subscriber'));
+
     }
-
-
-    public function testExceptionIsThrownOnBadRequestResponse()
-    {
-
-        $this->addClientMock(new \GuzzleHttp\Stream\Stream(fopen(RESOURCE_PATH . '/commission-detail-response.xml', 'r')), 400);
-
-        $this->cj_client->getEmitter()->attach($this->getMockObject());
-
-        try {
-            $this->cj_client->get('/');
-        } catch ( ClientException $expected ) {
-            return;
-        }
-
-        $this->fail('An expected exception has not been raised.');
-    }
-
 
 }

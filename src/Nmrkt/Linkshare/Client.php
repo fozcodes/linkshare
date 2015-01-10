@@ -57,7 +57,14 @@ class Client extends GuzzleClient
 	 */
 	public function __construct($api_uri, $config = [], $version = '1.0')
 	{
-		$this->oauth_config = $config;
+		$config_default = [
+	 		'username' => null,
+	 		'password' => null,
+	 		'client_id' => null,
+	 		'client_secret' => null,
+	 		'scope' => null
+	 	];
+		$this->oauth_config = array_replace($config_default, $config);
 
 		parent::__construct([
 			'base_url' => [
@@ -75,7 +82,7 @@ class Client extends GuzzleClient
 		return $this->oauth_url;
 	}
 
-	protected function getOauthConfig()
+	public function getOauthConfig()
 	{
 		return $this->oauth_config;
 	}

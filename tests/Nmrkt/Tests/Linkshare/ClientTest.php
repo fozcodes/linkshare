@@ -36,6 +36,23 @@ class ClientTest extends ClientTestCase
         $this->assertEquals('https://api.rakutenmarketing.com/endpoint/1.0/', $baseUrl);
     }
 
+
+    public function testConfigIsSetCorrectlyInConstructor()
+    {
+        $config = [
+            'username' => 'myname',
+            'password' => 'pwd',
+            'client_id' => 'jdiuv989djf',
+            'client_secret' => 'jsopiuiwe09te',
+            'scope' => 'scope!'
+        ];
+        $this->linkshare_client = new Client('endpoint', $config);
+
+        $set_config = $this->linkshare_client->getOauthConfig();
+
+        $this->assertEquals($config, $set_config);
+    }
+
     public function testOauthPluginCanBeAddedAsSubscriber()
     {
         $this->linkshare_client = new Client('endpoint');

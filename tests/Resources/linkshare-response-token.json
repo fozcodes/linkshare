@@ -1,6 +1,6 @@
 {
-  token_type: "bearer"
-  expires_in: 975
-  refresh_token: "781952e59b415fa3b8ca3fe9f7dc8b98"
-  access_token: "f14030791cb4989c551459f56276cab0"
+  "token_type": "bearer",
+  "expires_in": 975,
+  "refresh_token": "781952e59b415fa3b8ca3fe9f7dc8b98",
+  "access_token": "f14030791cb4989c551459f56276cab0"
 }

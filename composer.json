@@ -4,7 +4,7 @@
     "require": {
         "guzzlehttp/guzzle": "~5.0",
         "guzzlehttp/guzzle-services": "0.4.*",
-        "fosberyi/guzzle5-oauth2-subscriber": "master"
+        "nmrkt/guzzle5-oauth2-subscriber": "master"
 
     },
     "require-dev": {
@@ -17,7 +17,7 @@
                 "name": "nmrkt/guzzle5-oauth2-subscriber",
                 "version": "master",
                 "source": {
-                    "url": "https://github.com/fosberyi/guzzle5-oauth2-subscriber",
+                    "url": "https://github.com/NMRKT/guzzle5-oauth2-subscriber",
                     "type": "git",
                     "reference": "master"
                 }
@@ -37,7 +37,7 @@
         "psr-0": {
             "Nmrkt\\Linkshare": "src/",
             "Nmrkt\\Tests": "tests/",
-            "Nmrkt\\GuzzleOAuth2": "vendor/fosberyi/guzzle5-oauth2-subscriber/src/"
+            "Nmrkt\\GuzzleOAuth2": "vendor/nmrkt/guzzle5-oauth2-subscriber/src/"
         }
     }
 }

@@ -4,19 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3764c01507a4b81a4bdd3a5482ea67d2",
+    "hash": "828aeb95fecf85185abcf77f1ea9b7a3",
     "packages": [
-        {
-            "name": "fosberyi/guzzle5-oauth2-subscriber",
-            "version": "master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fosberyi/guzzle5-oauth2-subscriber",
-                "reference": "master"
-            },
-            "type": "library",
-            "time": "2015-01-07 18:08:29"
-        },
         {
             "name": "guzzlehttp/command",
             "version": "dev-master",
@@ -267,6 +256,17 @@
                 "stream"
             ],
             "time": "2014-10-12 19:45:36"
+        },
+        {
+            "name": "nmrkt/guzzle5-oauth2-subscriber",
+            "version": "master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NMRKT/guzzle5-oauth2-subscriber",
+                "reference": "master"
+            },
+            "type": "library",
+            "time": "2015-01-11 03:54:33"
         },
         {
             "name": "react/promise",
@@ -695,16 +695,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "193d609c031e61eb2be7218e19de834e9957be04"
+                "reference": "16c97a1567ef607b16f843d3ebc99f113cc1957e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/193d609c031e61eb2be7218e19de834e9957be04",
-                "reference": "193d609c031e61eb2be7218e19de834e9957be04",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/16c97a1567ef607b16f843d3ebc99f113cc1957e",
+                "reference": "16c97a1567ef607b16f843d3ebc99f113cc1957e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": ">=5.3.9"
             },
             "type": "library",
             "extra": {
@@ -733,7 +733,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
-            "time": "2015-01-05 15:02:28"
+            "time": "2015-01-09 18:07:24"
         }
     ],
     "aliases": [],

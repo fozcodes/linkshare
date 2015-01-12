@@ -4,27 +4,12 @@
     "require": {
         "guzzlehttp/guzzle": "~5.0",
         "guzzlehttp/guzzle-services": "0.4.*",
-        "nmrkt/guzzle5-oauth2-subscriber": "master"
+        "nmrkt/guzzle5-oauth2-subscriber": "dev-master"
 
     },
     "require-dev": {
         "phpunit/phpunit": "~3.7"
     },
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "nmrkt/guzzle5-oauth2-subscriber",
-                "version": "master",
-                "source": {
-                    "url": "https://github.com/NMRKT/guzzle5-oauth2-subscriber",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
-
-        }
-    ],
     "license": "MIT",
     "authors": [
         {

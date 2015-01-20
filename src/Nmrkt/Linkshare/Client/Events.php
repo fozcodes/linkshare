@@ -155,7 +155,11 @@ class Events extends LinkshareClient
         parent::__construct('events', $config);
     }
 
-    public function getTransactions($params = [])
+    /**
+     * @param array $params
+     * @return array
+     */
+    public function getTransactions()
     {
         $response = $this->get('transactions', [
             'query' => $this->createQueryString()

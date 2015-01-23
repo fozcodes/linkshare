@@ -11,6 +11,8 @@ This library uses the OAuth Plugin: https://github.com/NMRKT/guzzle5-oauth2-subs
 
 Currently there is only a client built for the [*events* API](https://developers.rakutenmarketing.com/subscribe/apis/info?name=Events&version=1.0&provider=LinkShare). Open to pull requests if anyone wants to tackle the Advanced Reports, Coupon, Product Search, etc. endpoints.
 
+**VERY IMPORTANT TO SET 'grant_type' => 'password' IN YOUR CONFIG - Otherwise the OAuth Plugin will set it as 'client_credentials' and Linkshare won't know what that means.**
+
 ## Usage
 ```
 <?php
@@ -18,6 +20,7 @@ Currently there is only a client built for the [*events* API](https://developers
 use Nmrkt\Linkshare\Client\Events;
 
 $config = [
+    'grant_type' => 'password',
     'username' => 'your_linkshare_username',
     'password' => 'your_linkshare_password',
     'client_id' => 'your client id',

@@ -1,10 +1,16 @@
 {
     "name": "nmrkt/linkshare",
     "description": "A guzzle client for consuming the Commission Junction API",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/michalmarcinkowski/guzzle5-oauth2-subscriber"
+        }
+    ],
     "require": {
         "guzzlehttp/guzzle": "~5.0",
         "guzzlehttp/guzzle-services": "0.4.*",
-        "nmrkt/guzzle5-oauth2-subscriber": "dev-master"
+        "michalmarcinkowski/guzzle5-oauth2-subscriber": "dev-master"
 
     },
     "require-dev": {
@@ -21,8 +27,7 @@
     "autoload": {
         "psr-0": {
             "Nmrkt\\Linkshare": "src/",
-            "Nmrkt\\Tests": "tests/",
-            "Nmrkt\\GuzzleOAuth2": "vendor/nmrkt/guzzle5-oauth2-subscriber/src/"
+            "Nmrkt\\Tests": "tests/"
         }
     }
 }

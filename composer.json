@@ -1,6 +1,6 @@
 {
     "name": "nmrkt/linkshare",
-    "description": "A guzzle client for consuming the Commission Junction API",
+    "description": "A guzzle client for consuming the Linkshare API",
     "require": {
         "guzzlehttp/guzzle": "~5.0",
         "guzzlehttp/guzzle-services": "0.4.*",

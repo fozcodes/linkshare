@@ -13,6 +13,8 @@ Currently there is only a client built for the [*events* API](https://developers
 
 **VERY IMPORTANT TO SET 'grant_type' => 'password' IN YOUR CONFIG - Otherwise the OAuth Plugin will set it as 'client_credentials' and Linkshare won't know what that means.**
 
+You can find your `client_id` and your `client_secret` here, by clicking the 'show keys' button: https://developers.rakutenmarketing.com/subscribe/site/pages/subscriptions.jag
+
 ## Usage
 ```
 <?php
